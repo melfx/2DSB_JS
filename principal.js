@@ -23,24 +23,30 @@ let tdAltura = paciente.querySelector(".info-altura");
 let peso = tdPeso.textContent; 
 let altura = tdAltura.textContent; 
 
-let imc = peso / (altura*altura);
-console.log(imc); 
-
 let tdImc = paciente.querySelector(".info-imc");
 tdImc.textContent = imc;
+
+//validação de dados
+let pesoeEhValido = true;
+let alturaEhValida = true;
 
 //validação de dados
 if(peso <= 0 || peso>= 1000) {
     console.log("Peso inválido!");
     tdImc.textContent = "Peso inválido!"
+    pesoEhValido = false;
 
 }
 if(altura <= 0 || altura>= 3) {
+    console.log("altura inválida!");
+    tdImc.textContent = "altura inválida!"
+    alturaEhValida = false;
+}
+
+if(pesoEhValido && alturaEhValida){
+    let imc = peso / (altura*altura);
 
 }
 
-//DESAFIO!!!
-//FAZER APARECER O ERRO "PESO INVÁLIDO"
-//NA CÉLULA DO IMC NA TABELA
 
 
